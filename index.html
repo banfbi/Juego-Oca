@@ -1,11 +1,39 @@
+<!--=======================================================-->
+<!-- Copyright (c) 2024. Alejandro Alberto Jiménez Brundin -->
+<!--=======================================================-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Juego de la Oca</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+    <div class="info-jugadores">
+        <div id="jugador1-indicador" class="jugador-indicador">
+            <div class="cuadro-jugador jugador1"></div>
+            <span>Jugador 1</span>
+        </div>
+        <div id="jugador2-indicador" class="jugador-indicador">
+            <div class="cuadro-jugador jugador2"></div>
+            <span>Jugador 2</span>
+        </div>
+    </div>
+    <div class="container">
+        <div id="tablero" class="tablero"></div>
+        <div class="controls">
+            <img id="imagenDado" src="assets/img/dado1.webp" alt="Dado" class="dado">
+            <button id="lanzarDado">Lanzar dado</button>
+            <div id="resultadoDado">Dado: 0</div>
+            <div id="jugador1">Jugador 1: Posición 0</div>
+            <div id="jugador2">Jugador 2: Posición 0</div>
+            <div id="mensaje"></div>
+        </div>
+    </div>
+    <script src="assets/javascript/script.js"></script>
 </body>
 </html>
+<!--=======================================================-->
+<!-- Copyright (c) 2024. Alejandro Alberto Jiménez Brundin -->
+<!--=======================================================-->
