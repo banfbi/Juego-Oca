@@ -55,10 +55,10 @@ function actualizarTablero() {
         casilla.classList.remove('jugador1-posicion', 'jugador2-posicion');
     });
 
-    if (jugador1Pos < 100) {
+    if (jugador1Pos < 63) {
         casillas[jugador1Pos].classList.add('jugador1-posicion');
     }
-    if (jugador2Pos < 100) {
+    if (jugador2Pos < 63) {
         casillas[jugador2Pos].classList.add('jugador2-posicion');
     }
 }
@@ -136,8 +136,6 @@ function moverJugador(jugador, posicion) {
         mensajeDiv.innerText = `¡Jugador ${jugador} ha ganado!`;
         lanzarDadoBtn.disabled = true;
     }
-
-    // Actualizar tablero y turno
     actualizarTablero();
     actualizarTurno();
 }
@@ -163,6 +161,7 @@ function animarDado() {
         }
     }, 100);
 }
+
 lanzarDadoBtn.addEventListener('click', () => {
     animarDado();
     fetch('CalcularTirada.php')
@@ -178,8 +177,8 @@ lanzarDadoBtn.addEventListener('click', () => {
                 } else {
                     moverJugador(2, dado);
                 }
-                turnoJugador1 = !turnoJugador1; // Invertir el turno después de resolver quién mueve la ficha
-                actualizarTurno(); // Actualizar los indicadores de turno después de invertir el turno
+                turnoJugador1 = !turnoJugador1;
+                actualizarTurno();
             }, 2000);
         })
         .catch(error => {
